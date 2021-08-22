@@ -22,5 +22,11 @@ DOWNLOAD_MAPPING = {
             "train" : "https://drive.google.com/file/d/12FP1vvMoCsHNA-Cs-wupZbX2gJC1Zv8c/view?usp=sharing",
             "validation" : "https://drive.google.com/file/d/1zzwAcgzeDHC3hS6vv7U_coWQfpW96npF/view?usp=sharing"
         }
+    },
+    "shajnfeld_bar_exam_outlines" : {
+        "urls" : {
+            "train" : "https://drive.google.com/file/d/1qnKvEl-2_0Ddrl7GSsUbM3Z3QE8PE46r/view?usp=sharing",
+            "validation" : "https://drive.google.com/file/d/1AsIZriXKEpeMDzEDndHovpnpS6fY6dtF/view?usp=sharing"
+        }
     }
 }
