@@ -7,6 +7,11 @@ import json
 import os
 import random
 from tqdm import tqdm
+from dateutil import parser
+import re
+import lzma
+import datetime# import datetime
+
 
 URL = "https://github.com/walkerdb/supreme_court_transcripts/releases/tag/2021-08-14"
 IN_DIR = "../../data/scotus_oral/supreme_court_transcripts-2021-08-14/oyez/cases/"
@@ -44,9 +49,16 @@ def main():
         if data['unavailable'] or data['transcript'] is None:
             continue
         text = process_transcript(data)
+
+        # Get oral argument date 
+        title = data['title']
+        match = re.search(r'(Jan(uary)?|Feb(ruary)?|Mar(ch)?|Apr(il)?|May|Jun(e)?|Jul(y)?|Aug(ust)?|Sep(tember)?|Oct(ober)?|Nov(ember)?|Dec(ember)?)\s+\d{2},\s+\d{4}', title)
+        oral_date = parser.parse(match.group()).strftime("%m-%d-%Y")
+        
         doc = {
             "url": URL,
-            "timestamp": "08-12-2021",
+            "created_timestamp": oral_date,
+            "timestamp": datetime.date.today().strftime("%m-%d-%Y"),
             "text": text
         }
         docs.append(doc) 
@@ -59,11 +71,6 @@ def main():
 
     save_to_file(train, os.path.join(OUT_DIR, "train.scotus_oral.jsonl"))
     save_to_file(validation, os.path.join(OUT_DIR, "validation.scotus_oral.jsonl"))
-
-
-
-    
-    
 
 if __name__ == "__main__":
     main()
