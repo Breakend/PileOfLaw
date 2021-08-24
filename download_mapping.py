@@ -28,5 +28,11 @@ DOWNLOAD_MAPPING = {
             "train" : "https://drive.google.com/file/d/1qnKvEl-2_0Ddrl7GSsUbM3Z3QE8PE46r/view?usp=sharing",
             "validation" : "https://drive.google.com/file/d/1AsIZriXKEpeMDzEDndHovpnpS6fY6dtF/view?usp=sharing"
         }
+    },
+    "edgar_contracts" : {
+        "urls" : {
+            "train" : "https://drive.google.com/file/d/1AQ-tZfJk-jkpcUKSXBed1U_K5hIbw9J-/view?usp=sharing",
+            "validation" : "https://drive.google.com/file/d/1KYe21mZ5PINwAwucud6SeXDBxQh-8WA6/view?usp=sharing"
+        }
     }
 }
