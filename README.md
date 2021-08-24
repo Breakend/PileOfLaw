@@ -9,3 +9,30 @@
 5. Add a download link to the download_mapping file, specifying train and validation splits.
 6. If a license is involved, make sure it is not super restrictive. We will have a DMCA process, but still better to avoid takedown requests.
 
+## Other papers to cite
+
+Some of the datasets in this work are transformed from prior work. Please cite these works as well if you use this dataset:
+
+```
+@inproceedings{borchmann-etal-2020-contract,
+    title = "Contract Discovery: Dataset and a Few-Shot Semantic Retrieval Challenge with Competitive Baselines",
+    author = "Borchmann, {\L}ukasz  and
+      Wisniewski, Dawid  and
+      Gretkowski, Andrzej  and
+      Kosmala, Izabela  and
+      Jurkiewicz, Dawid  and
+      Sza{\l}kiewicz, {\L}ukasz  and
+      Pa{\l}ka, Gabriela  and
+      Kaczmarek, Karol  and
+      Kaliska, Agnieszka  and
+      Grali{\'n}ski, Filip",
+    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2020",
+    month = nov,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://www.aclweb.org/anthology/2020.findings-emnlp.380",
+    pages = "4254--4268",
+    abstract = "We propose a new shared task of semantic retrieval from legal texts, in which a so-called contract discovery is to be performed {--} where legal clauses are extracted from documents, given a few examples of similar clauses from other legal acts. The task differs substantially from conventional NLI and shared tasks on legal information extraction (e.g., one has to identify text span instead of a single document, page, or paragraph). The specification of the proposed task is followed by an evaluation of multiple solutions within the unified framework proposed for this branch of methods. It is shown that state-of-the-art pretrained encoders fail to provide satisfactory results on the task proposed. In contrast, Language Model-based solutions perform better, especially when unsupervised fine-tuning is applied. Besides the ablation studies, we addressed questions regarding detection accuracy for relevant text fragments depending on the number of examples available. In addition to the dataset and reference results, LMs specialized in the legal domain were made publicly available.",
+}
+```
