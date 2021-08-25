@@ -1,10 +1,4 @@
 DOWNLOAD_MAPPING = {
-    "case_law" : {
-        "urls" :{
-            "train" : "N/A",
-            "validation" : "https://github.com/reglab/casehold/blob/main/case_ids/task_ids.json"
-        }
-    },
     "CFR" : {
         "urls" :{
             "train" : "https://drive.google.com/file/d/1NailqBHKoLNdy6anYoVAQZXFwotv3hsM/view?usp=sharing",
@@ -33,6 +27,18 @@ DOWNLOAD_MAPPING = {
         "urls" : {
             "train" : "https://drive.google.com/file/d/1AQ-tZfJk-jkpcUKSXBed1U_K5hIbw9J-/view?usp=sharing",
             "validation" : "https://drive.google.com/file/d/1KYe21mZ5PINwAwucud6SeXDBxQh-8WA6/view?usp=sharing"
+        }
+    },
+    "chesney_cybersecurity" : {
+        "urls" : {
+            "train" : "https://drive.google.com/file/d/1ueU6SC51v_d15_tGIKd6kR9OMK8-3B8O/view?usp=sharing",
+            "validation" : ""
+        }
+    },
+    "tax_rulings" : {
+        "urls" : {
+            "train" : "https://drive.google.com/file/d/19sK0JsRgIM2bLPzVZ8aFeTAAb6g9RDfb/view?usp=sharing",
+            "validation" : "https://drive.google.com/file/d/13h-LH5whZc3w9IgqHAWX0IMlBs4OdZYa/view?usp=sharing"
         }
     }
 }
