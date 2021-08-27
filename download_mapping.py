@@ -7,14 +7,14 @@ DOWNLOAD_MAPPING = {
     },
     "tos" : {
         "urls" :{
-            "train" : "https://drive.google.com/file/d/1y8spq600wf8VMUb1QkK3oYczRoGn9u5B/view?usp=sharing",
-            "validation" : "https://drive.google.com/file/d/1CkAvJSNkjAAieMBB-kt3HCTT6ou7TYX4/view?usp=sharing"
+            "train" : "https://drive.google.com/file/d/1GlZjyBPHomLOlXdZEeOiJMv8z7VwheWC/view?usp=sharing",
+            "validation" : "https://drive.google.com/file/d/12wrr5TEv9cUtGgRjb-dlFzX6KCphmnE5/view?usp=sharing"
         }
     },
     "tos_tagged" : {
         "urls" :{
-            "train" : "https://drive.google.com/file/d/1mi4VginCa7Q7eEwwpl7ppuVR8sabyL0j/view?usp=sharing",
-            "validation" : "https://drive.google.com/file/d/1PGhRz1v3UqEVGUO19sW5m39O-98facRK/view?usp=sharing"
+            "train" : "https://drive.google.com/file/d/1kVc8UC1qGyjlfzlcGgIGT6J1uFm3yNFd/view?usp=sharing",
+            "validation" : "https://drive.google.com/file/d/1-cXuk1O1I60X6qn1B4CKA_4JqUy1Ha8X/view?usp=sharing"
         }
     }
 }

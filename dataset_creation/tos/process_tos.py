@@ -4,15 +4,30 @@
 
 import os
 import json
+import re
 import random
 import numpy as np
+import datetime
 from tqdm import tqdm
+from dateutil import parser
 from bs4 import BeautifulSoup
 
 # FILE PATHS
 RAW_PATH = "../../data/tos/raw" # path to contracts
 OUT_PATH = "../../data/tos/processed" # path to write data (docs of original text) out to
 OUT_PATH_TAGGED = "../../data/tos/processed_tagged" # path to write data (docs of original text with annotation tags) out to
+
+# Regex match for date
+match_text_patterns = ["Last Updated Date:", "Last Updated:", "Last updated:", "last updated on", "Last revised on", "Last Revised:", "Last revised on", "Revised", "Date of Last Revision:", "Last modified:", "Last modified by", "in effect as of", "Effective Date:", "Effective:", "effective on", "Effective on", "Applicable from:"]
+combined_text_regex = '(?:%s)' % '|'.join(match_text_patterns)
+
+match_date_patterns = [
+	r'(Jan(uary)?|Feb(ruary)?|Mar(ch)?|Apr(il)?|May|Jun(e)?|Jul(y)?|Aug(ust)?|Sep(tember)?|Oct(ober)?|Nov(ember)?|Dec(ember)?)\s+\d{1,2}(th)?,\s+\d{4}',
+	r'\d{1,2}\s+(Jan(uary)?|Feb(ruary)?|Mar(ch)?|Apr(il)?|May|Jun(e)?|Jul(y)?|Aug(ust)?|Sep(tember)?|Oct(ober)?|Nov(ember)?|Dec(ember)?)(,)?\s+\d{4}',
+	r'\d{1,2}/\d{1,2}/\d{4}',
+	r'\d{4}-\d{1,2}-\d{1,2}'
+]
+combined_date_regex = '(?:%s)' % '|'.join(match_date_patterns)
 
 def save_to_processed(train, val, source_name, out_path):
 	if not os.path.exists(out_path):
@@ -38,22 +53,38 @@ def main():
 		print("Processing:", file)
 		with open(file, mode='r', encoding='utf-8') as in_file:
 			text_tagged = in_file.read()
-			# print(text_tagged)
 
+			# Remove annotation tags
 			soup = BeautifulSoup(text_tagged, features="lxml")
 			text = soup.get_text()
-			# print(text)
+
+			# Extract creation date
+			lines = text.splitlines()
+			date_text = None
+			for line in lines:
+				date_text = re.search(combined_text_regex, line)
+				# If matched text describing date, break at current line
+				if date_text:
+					break
+			creation_date = ""
+			if date_text:
+				match = re.search(combined_date_regex, line)
+				# If matched date, parse match
+				if match:
+					creation_date = parser.parse(match.group()).strftime("%m-%d-%Y")
 
 			outputs.append({
-				"text": text,
 				"url": "http://claudette.eui.eu/ToS.zip",
-				"timestamp": "08-20-2021"
+				"created_timestamp": creation_date,
+				"downloaded_timestamp": datetime.date.today().strftime("%m-%d-%Y"),
+				"text": text
 			})
 
 			outputs_tagged.append({
-				"text": text_tagged,
 				"url": "http://claudette.eui.eu/ToS.zip",
-				"timestamp": "08-20-2021"
+				"created_timestamp": creation_date,
+				"downloaded_timestamp": datetime.date.today().strftime("%m-%d-%Y"),
+				"text": text_tagged
 			})
 
 	outputs = np.array(outputs)
