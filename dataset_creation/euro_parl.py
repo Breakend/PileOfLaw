@@ -7,6 +7,7 @@ import glob
 import random
 from tqdm import tqdm 
 import json
+import datetime
 
 URL = "https://www.statmt.org/europarl/"
 DATA_DIR = "../../data/europarl"
@@ -42,7 +43,8 @@ def main():
         text = process_file(f)
         doc = {
             "url": URL,
-            "timestamp": "05-15-2012",
+            "created_timestamp" : "", # We don't atually know individual 
+            "downloaded_timestamp" : datetime.date.today().strftime("%m-%d-%Y"),
             "text": text
         }
         docs.append(doc)
