@@ -7,8 +7,8 @@ DOWNLOAD_MAPPING = {
     },
     "scotus_oral" : {
         "urls" :{
-            "train" : "https://drive.google.com/file/d/1dCF_pZ501Rb0Ii7LcrxJapmFvhaj2bG-/view?usp=sharing",
-            "validation" : "https://drive.google.com/file/d/1Ksm7gqQfN2eQavuCdVgAN0jE_zfJURH-/view?usp=sharing"
+            "train" : "https://drive.google.com/file/d/1s59DllnfJxYjz89M1RWKgh7zmMNyMQ5u/",
+            "validation" : "https://drive.google.com/file/d/1azhvkZu8d-kX83XApgbzPnhnStKMkxne"
         }
     }
 }
