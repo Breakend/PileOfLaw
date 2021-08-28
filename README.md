@@ -46,5 +46,21 @@ doi = {10.7281/T1/N1X6I4},
 url = {https://doi.org/10.7281/T1/N1X6I4}
 }
 
+@article{hendrycks2021cuad,
+      title={CUAD: An Expert-Annotated NLP Dataset for Legal Contract Review}, 
+      author={Dan Hendrycks and Collin Burns and Anya Chen and Spencer Ball},
+      journal={arXiv preprint arXiv:2103.06268},
+      year={2021}
+}
+
+@inproceedings{koehn2005europarl,
+  title={Europarl: A parallel corpus for statistical machine translation},
+  author={Koehn, Philipp and others},
+  booktitle={MT summit},
+  volume={5},
+  pages={79--86},
+  year={2005},
+  organization={Citeseer}
+}
 
 ```
