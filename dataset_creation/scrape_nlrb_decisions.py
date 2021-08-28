@@ -7,11 +7,14 @@ import os
 import json
 import PyPDF2 
 import glob
+import datetime
+import random
 
 from multiprocessing import Pool
 
 
 DIR = "../data/nlrb/scraping"
+OUT_DIR = "../data/nlrb/processed"
 BASE_URL = "https://www.nlrb.gov/cases-decisions/decisions/board-decisions?search_term=&op=Search&volume=-1&slip_opinion_number=&page_number=$PAGE_NUMBER&items_per_page=100&form_build_id=form-EXFTGMwfIM0yO2L6ENa30_RuqwbWvmk5YR1UYcvgqsA&form_id=board_decisions_form"
 
 
@@ -75,12 +78,51 @@ def convert_pdfs_to_text(args):
     for f in tqdm(pdf_files):
         if "(1)" in f:
             continue
-        text = convert_pdf(f)
+        out_fpath = os.path.join(DIR, "text", f.split("/")[-1].replace(".pdf", ".txt"))
+        if os.path.exists(out_fpath):
+            continue
+        try:
+            text = convert_pdf(f)
+        except:
+            text = ""
         if len(text) == 0:
             continue
-        out_fpath = os.path.join(DIR, "text", f.split("/")[-1].replace(".pdf", ".txt"))
         with open(out_fpath, "w") as outf:
             outf.write(text)
+
+def save_to_file(data, fpath):
+    with open(fpath, "w") as out_file:
+        for x in data:
+            out_file.write(json.dumps(x) + "\n")
+    print(f"Written {len(data)} to {fpath}")
+
+def create_splits(args):
+    # load contracts 
+    files = glob.glob(os.path.join(DIR, "text", "*.txt"))
+    print(f"Collected {len(files)} decisions.")
+    docs = []
+    for f in tqdm(files): 
+        text = ""
+        with open(f) as in_file: 
+            for line in in_file:
+                text = text + line
+        
+        doc = {
+            "url": "https://www.nlrb.gov/cases-decisions/decisions/board-decisions",
+            "created_timestamp": "",
+            "timestamp": datetime.date.today().strftime("%m-%d-%Y"),
+            "text": text
+        }
+        docs.append(doc) 
+    
+    # shuffle and split into train / validation 
+    random.seed(0)
+    random.shuffle(docs)
+    train = docs[:int(len(docs)*0.75)]
+    validation = docs[int(len(docs)*0.75):]
+
+    save_to_file(train, os.path.join(OUT_DIR, "train.nlrb_decisions.jsonl"))
+    save_to_file(validation, os.path.join(OUT_DIR, "validation.nlrb_decisions.jsonl"))
     
 
 
@@ -92,6 +134,8 @@ if __name__ == "__main__":
                         help='Downloads PDFS')
     parser.add_argument('--convert_pdfs', action='store_true',
                         help='Converts PDF files to text files')
+    parser.add_argument('--create_splits', action='store_true',
+                        help='Aggregates text files into train / val jsonls')
 
     args = parser.parse_args()
     if args.get_urls:
@@ -100,4 +144,6 @@ if __name__ == "__main__":
         download_pdfs(args)
     if args.convert_pdfs:
         convert_pdfs_to_text(args)
+    if args.create_splits:
+        create_splits(args)
     #main()
