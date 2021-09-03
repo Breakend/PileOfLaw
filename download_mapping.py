@@ -46,5 +46,17 @@ DOWNLOAD_MAPPING = {
             "train" : "https://drive.google.com/file/d/1s59DllnfJxYjz89M1RWKgh7zmMNyMQ5u/",
             "validation" : "https://drive.google.com/file/d/1azhvkZu8d-kX83XApgbzPnhnStKMkxne"
         }
+    },
+    "tos" : {
+        "urls" :{
+            "train" : "https://drive.google.com/file/d/1GlZjyBPHomLOlXdZEeOiJMv8z7VwheWC/view?usp=sharing",
+            "validation" : "https://drive.google.com/file/d/12wrr5TEv9cUtGgRjb-dlFzX6KCphmnE5/view?usp=sharing"
+        }
+    },
+    "tos_tagged" : {
+        "urls" :{
+            "train" : "https://drive.google.com/file/d/1kVc8UC1qGyjlfzlcGgIGT6J1uFm3yNFd/view?usp=sharing",
+            "validation" : "https://drive.google.com/file/d/1-cXuk1O1I60X6qn1B4CKA_4JqUy1Ha8X/view?usp=sharing"
+        }
     }
 }
