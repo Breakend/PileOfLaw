@@ -64,5 +64,11 @@ DOWNLOAD_MAPPING = {
             "train": "https://drive.google.com/file/d/14SXhyaojMwXjPlcb1GXpK3E6u-abL0Tz/view?usp=sharing",
             "validation": "https://drive.google.com/file/d/1admnbREtKOzHVe6o4DyqWiJiqvRzJQ3h/view?usp=sharing"
         }
+    },
+    "courtlistener_opinions" : {
+        "urls" : {
+            "train" : "https://drive.google.com/file/d/1ZhsjoMbdV3t2pD_fUGaUjkrdn96ZinHh/view?usp=sharing",
+            "validation" : "https://drive.google.com/file/d/1UnI5ewdpx1Tx2i9bduN8T31U2UZ8aYYc/view?usp=sharing"
+        }
     }
 }
