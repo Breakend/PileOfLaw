@@ -65,10 +65,14 @@ DOWNLOAD_MAPPING = {
             "validation": "https://drive.google.com/file/d/1admnbREtKOzHVe6o4DyqWiJiqvRzJQ3h/view?usp=sharing"
         }
     },
+    "courtlistener_opinions" : {
+        "urls" : {
+            "train" : "https://drive.google.com/file/d/1ZhsjoMbdV3t2pD_fUGaUjkrdn96ZinHh/view?usp=sharing",
+            "validation" : "https://drive.google.com/file/d/1UnI5ewdpx1Tx2i9bduN8T31U2UZ8aYYc/view?usp=sharing"
+    },
     "federal_register" : {
         "urls" :{
             "train": "https://drive.google.com/file/d/11mjde6aWf8TAYftnLoXWb4uMo1c9VO9u/view?usp=sharing",
-            "validation": "https://drive.google.com/file/d/1FWosuQzycCVC10_a7VM8o9de_lb2GRN5/view?usp=sharing"
-        }
+            "validation": "https://drive.google.com/file/d/1FWosuQzycCVC10_a7VM8o9de_lb2GRN5/view?usp=sharing"   
     }
 }
