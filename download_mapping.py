@@ -64,5 +64,11 @@ DOWNLOAD_MAPPING = {
             "train": "https://drive.google.com/file/d/14SXhyaojMwXjPlcb1GXpK3E6u-abL0Tz/view?usp=sharing",
             "validation": "https://drive.google.com/file/d/1admnbREtKOzHVe6o4DyqWiJiqvRzJQ3h/view?usp=sharing"
         }
+    },
+    "federal_register" : {
+        "urls" :{
+            "train": "https://drive.google.com/file/d/11mjde6aWf8TAYftnLoXWb4uMo1c9VO9u/view?usp=sharing",
+            "validation": "https://drive.google.com/file/d/1FWosuQzycCVC10_a7VM8o9de_lb2GRN5/view?usp=sharing"
+        }
     }
 }
