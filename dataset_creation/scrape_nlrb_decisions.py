@@ -25,7 +25,7 @@ def get_urls(args):
         page = requests.get(url)
         text = page.text
         #p = re.compile("href=\"(https\:\/\/apps\.nlrb\.gov\/link\/document\.aspx\/[a-z0-9]*)\"")
-        p = re.compile("< td > ([0 - 9] *\ /[0-9] * \ /[0-9] *) <\ / td >\s * < td > [0 - 9] * NLRB No\.[0 - 9] * <\ / td >\s * < td >\s * < a href =\"(https\:\/\/apps\.nlrb\.gov\/link\/document\.aspx\/[a-z0-9]*)\"")
+        p = re.compile("<td> ([0-9]*\/[0-9]*\/[0-9]*) <\/td>\s*<td>[0-9]* NLRB No\. [0-9]*<\/td>\s*<td>\s*<a href=\"(https\:\/\/apps\.nlrb\.gov\/link\/document\.aspx\/[a-z0-9]*)\"")
         all_matches.extend(re.findall(p, text))
         break
     
