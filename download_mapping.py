@@ -46,5 +46,11 @@ DOWNLOAD_MAPPING = {
             "train" : "https://drive.google.com/file/d/1s59DllnfJxYjz89M1RWKgh7zmMNyMQ5u/",
             "validation" : "https://drive.google.com/file/d/1azhvkZu8d-kX83XApgbzPnhnStKMkxne"
         }
+    },
+    "atticus_contracts" : {
+        "urls" :{
+            "train" : "https://drive.google.com/file/d/1_4qSNBNbD1s3tuB9XbbPPClXk0y_Rq15/view?usp=sharing",
+            "validation" : "https://drive.google.com/file/d/1H4ac_0VjaIcpS6gbwCYovGxanUkUSd7L/view?usp=sharing"
+        }
     }
 }
