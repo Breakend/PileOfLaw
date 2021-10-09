@@ -85,6 +85,25 @@ DOWNLOAD_MAPPING = {
         "urls" : {
             "train" : "https://drive.google.com/file/d/1ZhsjoMbdV3t2pD_fUGaUjkrdn96ZinHh/view?usp=sharing",
             "validation" : "https://drive.google.com/file/d/1UnI5ewdpx1Tx2i9bduN8T31U2UZ8aYYc/view?usp=sharing"
+            }
+    },
+    "fed_rules_civil_procedure" : {
+        "urls" : {
+            "train" : "https://drive.google.com/file/d/1L8DD7-uCUDgskElTEXdD-5JyXO70Qhgl/view?usp=sharing",
+            "validation" : "https://drive.google.com/file/d/1iIA5-LzsnYo0IFGv9DQOuOohZGGMCkou/view?usp=sharing"
+            }
+    },
+    "fed_rules_evidence" : {
+        "urls" : {
+            "train" : "https://drive.google.com/file/d/1b_-Pd9bE7f68uI_BLocGa08OppcpOKid/view?usp=sharing",
+            "validation" : "https://drive.google.com/file/d/1sJ2TtdYvZPteGY38hO2Cc8el6lV1WgrZ/view?usp=sharing"
+            }
+    },
+    "state_codes" : {
+        "urls" : {
+            "train" : "https://drive.google.com/file/d/1y7UGCGUGHdZ5mFiMqu8yiL1iefs0WeU0/view?usp=sharing",
+            "validation" : "https://drive.google.com/file/d/1uNgd3x9UFPYb3YxXDIMXk_8cQ3Jc4kOl/view?usp=sharing"
+            }
     },
     "federal_register" : {
         "urls" :{
