@@ -74,7 +74,7 @@ for subreddit in subreddits:
             print('downloading most recent', maxThings)
 
 
-        created_utc = '1592260507' if subreddit == 'legaladvice' else ''
+        created_utc = '1612822911' if subreddit == 'legaladvice' else ''
 
         startTime = time.time()
         timePrint = startTime

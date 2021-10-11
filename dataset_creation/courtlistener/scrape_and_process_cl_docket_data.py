@@ -76,24 +76,39 @@ val=0
 train=0
 from dateutil.relativedelta import *
 import datetime
+import datefinder
 
-cur_month = datetime.datetime.now()
-prev_month = cur_month - relativedelta(days=3)
+if os.path.exists("./cache/cur_url.txt"):
+    with open("./cache/cur_url.txt", "r") as f:
+        next_page = f.read().strip()
+        dates = list(datefinder.find_dates(next_page))
+        cur_month = dates[0]
+        prev_month = dates[1]
+        if cur_month < prev_month:
+            tmp = prev_month
+            prev_month = cur_month
+            cur_month = tmp
+else:
+    cur_month = datetime.datetime.now()
+    prev_month = cur_month - relativedelta(days=3)
+    next_page = f"https://www.courtlistener.com/api/rest/v3/docket-entries/?date_filed__lt={cur_month.strftime('%Y-%m-%d')}&date_filed__gt={prev_month.strftime('%Y-%m-%d')}&fields=date_filed%2Crecap_documents%2Cdescription&recap_documents__is_available=true"
 
-with xz.open("./cache/train.courtlistenerdocketentries.xz", 'w') as train_f:
-    with xz.open("./cache/validation.courtlistenerdocketentries.xz", 'w') as val_f:
+
+with xz.open("./cache/train.courtlistenerdocketentries.xz", 'a') as train_f:
+    with xz.open("./cache/validation.courtlistenerdocketentries.xz", 'a') as val_f:
         while True:
-            print(cur_month.strftime('%Y-%m-%d'))
-            next_page = f"https://www.courtlistener.com/api/rest/v3/docket-entries/?date_filed__lt={cur_month.strftime('%Y-%m-%d')}&date_filed__gt={prev_month.strftime('%Y-%m-%d')}&fields=date_filed%2Crecap_documents%2Cdescription&recap_documents__is_available=true"
+            #print(cur_month.strftime('%Y-%m-%d'))
+            #next_page = f"https://www.courtlistener.com/api/rest/v3/docket-entries/?date_filed__lt={cur_month.strftime('%Y-%m-%d')}&date_filed__gt={prev_month.strftime('%Y-%m-%d')}&fields=date_filed%2Crecap_documents%2Cdescription&recap_documents__is_available=true"
             while next_page is not None:
-                # print(next_page)
+                print(next_page)
                 js_data = requestJSON(next_page)
                 if 'count' in js_data:
                     print(js_data['count'])
                 time.sleep(random.random()*3)
                 next_page = js_data["next"]
-                with open('./cache/cur_url.txt', 'w') as f:
-                    f.write(next_page)
+                if next_page is not None:
+                    with open('./cache/cur_url.txt', 'w') as f:
+                        f.write(next_page)
                 for docket_entry in js_data["results"]:
                     for recap_data in docket_entry["recap_documents"]:
                         if "plain_text" in recap_data and recap_data["plain_text"]:
