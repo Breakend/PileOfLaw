@@ -90,5 +90,11 @@ DOWNLOAD_MAPPING = {
         "urls" :{
             "train": "https://drive.google.com/file/d/11mjde6aWf8TAYftnLoXWb4uMo1c9VO9u/view?usp=sharing",
             "validation": "https://drive.google.com/file/d/1FWosuQzycCVC10_a7VM8o9de_lb2GRN5/view?usp=sharing"   
+    },
+    "echr" : {
+        "urls" : {
+            "train" : "https://drive.google.com/file/d/1uMgLxE78gsfKUV3oUE5mLS2AXflYp326/view?usp=sharing",
+            "validation" : "https://drive.google.com/file/d/1R7H1-PslUmHEvWHn11XPRaAmHqEVJt0u/view?usp=sharing"
+        }
     }
 }
