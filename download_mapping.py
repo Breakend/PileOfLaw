@@ -96,5 +96,11 @@ DOWNLOAD_MAPPING = {
             "train" : "https://drive.google.com/file/d/1uMgLxE78gsfKUV3oUE5mLS2AXflYp326/view?usp=sharing",
             "validation" : "https://drive.google.com/file/d/1R7H1-PslUmHEvWHn11XPRaAmHqEVJt0u/view?usp=sharing"
         }
+    },
+    "oig" : {
+        "urls" : {
+            "train" : "https://drive.google.com/file/d/1-ScvN3dzXYfh88kQ7WTCqv6ILnWtXGj2/view?usp=sharing",
+            "validation" : "https://drive.google.com/file/d/1v8_7TX-89PD90ErDDkP-r0uiB6TPm0Kt/view?usp=sharing"
+        }
     }
 }
