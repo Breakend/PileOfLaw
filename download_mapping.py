@@ -114,5 +114,11 @@ DOWNLOAD_MAPPING = {
             "train" : "https://drive.google.com/file/d/1Je_gv4arwMGHhRPP_VlBenyLnkjTf8sP/view?usp=sharing"
             "validation" : ""
         }
-    }
+    },
+   "eurlex" : {
+       "urls" : {
+           "train" : "https://drive.google.com/file/d/1W-9KOAQc5ZZp6QxiutE-gWJF252_G7Ta/view?usp=sharing",
+           "validation" : "https://drive.google.com/file/d/15iXDoKud4uqkiBzMUHFhgJTDLeFxsZQR/view?usp=sharing"
+       }
+   } 
 }
