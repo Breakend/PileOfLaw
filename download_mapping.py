@@ -102,5 +102,17 @@ DOWNLOAD_MAPPING = {
             "train" : "https://drive.google.com/file/d/1-ScvN3dzXYfh88kQ7WTCqv6ILnWtXGj2/view?usp=sharing",
             "validation" : "https://drive.google.com/file/d/1v8_7TX-89PD90ErDDkP-r0uiB6TPm0Kt/view?usp=sharing"
         }
+    },
+    "cfpb_creditcards" : {
+        "urls" : {
+            "train" : "https://drive.google.com/file/d/1enRMvR4WutioSgvenYG9szPBt5SqSbsR/view?usp=sharing",
+            "validation" : "https://drive.google.com/file/d/1Lb-Tki6NfFMRaHtOpGF5H12f0yHb1kp0/view?usp=sharing"
+        }
+    },
+    "cc_textbooks" : {
+        "urls" : {
+            "train" : "https://drive.google.com/file/d/1Je_gv4arwMGHhRPP_VlBenyLnkjTf8sP/view?usp=sharing"
+            "validation" : ""
+        }
     }
 }
