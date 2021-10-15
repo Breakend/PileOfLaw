@@ -120,7 +120,8 @@ for zfile in ZIP_FILE_NAMES:
     out_dict = {}
     out_dict ["url"] = needed_link   # should the key be url or link
     out_dict ["text"] = all_text
-    out_dict ["created_timestamp"] = TIME_STAMP
+    #out_dict ["created_timestamp"] = TIME_STAMP
+    out_dict ["created_timestamp"] = datetime.date.today().strftime("%m-%d-%Y")
     out_dict ["downloaded_timestamp"] = datetime.date.today().strftime("%m-%d-%Y")
     out_dict ["state_year"] = state_name_year
     processed_out_json_data_list.append(out_dict)
