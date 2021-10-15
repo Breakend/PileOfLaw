@@ -10,6 +10,8 @@ OUT_PATH = "./state_codes_processed"
 ZIP_FILE_NAMES = ["state codes-001.zip", "state codes-002.zip", "state codes-003.zip", "state codes-004.zip" ]
 #ZIP_FILE_NAMES = ["state codes-004.zip"] #for testing purposes use one zip at a time
 
+TIME_STAMP = "SEP 19 2021"  # check the format
+
 # initalize list of out dictionary
 processed_out_json_data_list = []
 TRAIN_VAL_SPLIT = 0.75
