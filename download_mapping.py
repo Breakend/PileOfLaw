@@ -120,5 +120,17 @@ DOWNLOAD_MAPPING = {
            "train" : "https://drive.google.com/file/d/1W-9KOAQc5ZZp6QxiutE-gWJF252_G7Ta/view?usp=sharing",
            "validation" : "https://drive.google.com/file/d/15iXDoKud4uqkiBzMUHFhgJTDLeFxsZQR/view?usp=sharing"
        }
-   } 
+   },
+   "uscode" : {
+       "urls" : {
+           "train" : "https://drive.google.com/file/d/1vozGzpy_c_92wSaZRf9nl09t19j7VCzc/view?usp=sharing",
+           "validation" : "https://drive.google.com/file/d/1sBvBcWslrsiWKVIh_eWvKSqrEHa15WRk/view?usp=sharing"
+       }
+   },
+   "undebates" : {
+       "urls" : {
+           "train" : "https://drive.google.com/file/d/1WMTRxL6-dSOY5Ho-ErjWEvs2Lpg8oeq0/view?usp=sharing",
+           "validation" : "https://drive.google.com/file/d/1lH5BVLlCiwmj7sZ5qoP3uwfXU0NjZSxE/view?usp=sharing"
+       }
+   }
 }
