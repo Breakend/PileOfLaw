@@ -151,5 +151,11 @@ DOWNLOAD_MAPPING = {
            "train" : "https://drive.google.com/file/d/1WMTRxL6-dSOY5Ho-ErjWEvs2Lpg8oeq0/view?usp=sharing",
            "validation" : "https://drive.google.com/file/d/1lH5BVLlCiwmj7sZ5qoP3uwfXU0NjZSxE/view?usp=sharing"
        }
+   },
+   "congressionalcommitteehearings" : {
+       "urls" : {
+           "train" : "https://drive.google.com/file/d/1WL1i1gAIohhRumbi1d9MhGHc3V-2uE5P/view?usp=sharing",
+           "validation" : "https://drive.google.com/file/d/1HD48dtWb6W9tZbCIP2QGdIKs1HB88H3G/view?usp=sharing"
+       }
    }
 }
