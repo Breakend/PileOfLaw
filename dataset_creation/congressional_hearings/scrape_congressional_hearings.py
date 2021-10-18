@@ -44,10 +44,12 @@ class GovInfo(scrapelib.Scraper):
 
 
         partial = f"/collections/CHRG/{self._format_time(datetime.datetime(1970, 1, 1, 0, 0, tzinfo=pytz.utc))}/"
-        url_template = self.BASE_URL + partial 
+        url_template = self.BASE_URL + partial + "{end_time}"
+        end_time = datetime.datetime.now(pytz.utc)
+        end_time_str = self._format_time(end_time)
 
         seen = cachetools.LRUCache(30)
-        for page in self._pages(url_template, congress):
+        for page in self._pages(url_template, congress, end_time_str):
             for package in page['packages']:
                 package_id = package['packageId']
 
@@ -60,13 +62,20 @@ class GovInfo(scrapelib.Scraper):
                     # associated with the package_id key
                     seen[package_id] = None
 
-                response = self.get(package['packageLink'])
-                yield response.json()
+                response = requests.get(package['packageLink'], headers=headers)
+                try: 
+                    data = response.json()
+                except:
+                    data = None
+
+                yield data
 
     def _download_pdf(self, data):
         # if not "html" in data["download"]:
         #     print(data["download"].keys())
         #     return
+        if data is None or data["download"] is None:
+            return None
         url = data["download"]["zipLink"]
         tag = url.split("/")[-2]
         url = f"https://www.govinfo.gov/content/pkg/{tag}/html/{tag}.htm"
@@ -90,16 +99,27 @@ class GovInfo(scrapelib.Scraper):
         }
         return datapoint
 
-    def _pages(self, url_template, congress):
+    def _pages(self, url_template, congress, end_time):
         page_size = 100
 
         params = {'offset':  0,
                   'pageSize': page_size,
                   "congress" : congress}
 
-        url =  url_template
-
-        response = requests.get(url, params=params, headers=headers)
+        #url =  url_template
+        url = url_template.format(end_time=end_time)
+        try_count = 0
+        responded = False
+        while not responded:
+            response = requests.get(url, params=params, headers=headers)
+            if response.status_code != 200:
+                responded = False
+                time.sleep(random.random() * 5)
+                try_count += 1
+                if try_count >= 3:
+                    responded = True
+            else:
+                responded = True
         data = response.json()
 
         yield data
@@ -112,7 +132,7 @@ class GovInfo(scrapelib.Scraper):
             earliest_timestamp = data['packages'][-1]['lastModified']
             url = url_template.format(end_time=earliest_timestamp)
 
-            response = self.get(url, params=params)
+            response = requests.get(url, params=params, headers=headers)
             data = response.json()
 
             yield data
@@ -131,19 +151,18 @@ print(scraper.collections())
 # start_time = datetime.datetime(2020, 1, 1, 0, 0, tzinfo=pytz.utc)
 congresses = np.arange(89, 118)[::-1]
 
-seen_urls = []
-with xz.open("./cache/train.congressional_hearings.xz", 'r') as f:
-    seen_urls.extend([x["url"] for x in f.readlines()])
-with xz.open("./cache/validation.congressional_hearings.xz", 'r') as f:
-    seen_urls.extend([x["url"] for x in f.readlines()])
+#seen_urls = []
+#if os.path.exists("./cache/train.congressional_hearings.xz"):
+#    with xz.open("./cache/train.congressional_hearings.xz", 'r') as f:
+#        import pdb; pdb.set_trace()
+#        seen_urls.extend([x["url"] for x in f.readlines()])
+#    with xz.open("./cache/validation.congressional_hearings.xz", 'r') as f:
+#        seen_urls.extend([x["url"] for x in f.readlines()])
 
-import pdb; pdb.set_trace()
 # val_f = xz.open("./cache/validation.congressional_hearings.xz", 'r')
-
-
-
+collected_urls = []
 i = 0
-overwrite = False
+overwrite = True 
 open_type = 'w' if overwrite else 'a'
 train_f = xz.open("./cache/train.congressional_hearings.xz", open_type)
 val_f = xz.open("./cache/validation.congressional_hearings.xz", open_type)
@@ -155,6 +174,10 @@ for congress in congresses:
             print("No data for hearing")
             print(hearing)
             continue
+        #print(datapoint["url"])
+        if datapoint["url"] in collected_urls:
+            print("ALREADY SAW URL!!")
+        collected_urls.append(datapoint["url"])
         i += 1
         if i % 1000 == 0:
             print(i)

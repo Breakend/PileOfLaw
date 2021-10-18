@@ -98,7 +98,8 @@ with xz.open("./cache/train.courtlistenerdocketentries.xz", 'a') as train_f:
     with xz.open("./cache/validation.courtlistenerdocketentries.xz", 'a') as val_f:
         while True:
             #print(cur_month.strftime('%Y-%m-%d'))
-            #next_page = f"https://www.courtlistener.com/api/rest/v3/docket-entries/?date_filed__lt={cur_month.strftime('%Y-%m-%d')}&date_filed__gt={prev_month.strftime('%Y-%m-%d')}&fields=date_filed%2Crecap_documents%2Cdescription&recap_documents__is_available=true"
+            if next_page is None:
+                next_page = f"https://www.courtlistener.com/api/rest/v3/docket-entries/?date_filed__lt={cur_month.strftime('%Y-%m-%d')}&date_filed__gt={prev_month.strftime('%Y-%m-%d')}&fields=date_filed%2Crecap_documents%2Cdescription&recap_documents__is_available=true"
             while next_page is not None:
                 print(next_page)
                 js_data = requestJSON(next_page)
@@ -126,9 +127,7 @@ with xz.open("./cache/train.courtlistenerdocketentries.xz", 'a') as train_f:
                                 train += 1
                         if train % 5000 == 0:
                             print(f"Have {train} documents and {val} validation documents!")
-            
             cur_month = prev_month
             prev_month = cur_month - relativedelta(days=3)
-
 
                             
