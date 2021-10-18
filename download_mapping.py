@@ -157,5 +157,11 @@ DOWNLOAD_MAPPING = {
            "train" : "https://drive.google.com/file/d/1WL1i1gAIohhRumbi1d9MhGHc3V-2uE5P/view?usp=sharing",
            "validation" : "https://drive.google.com/file/d/1HD48dtWb6W9tZbCIP2QGdIKs1HB88H3G/view?usp=sharing"
        }
+   },
+   "constitutions" : {
+       "urls" : {
+           "train" : "https://drive.google.com/file/d/1J7X7QoV-UgybCdDyu0pZjOez3gCBPBpv/view?usp=sharing",
+           "validation" :  "https://drive.google.com/file/d/1XRuPugqtQdsfZodbGOdGi2jSagXu2Pbe/view?usp=sharing"
+       }
    }
 }

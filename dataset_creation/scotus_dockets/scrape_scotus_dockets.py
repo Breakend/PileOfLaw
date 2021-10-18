@@ -58,6 +58,7 @@ for year in list(range(18, 22))[::-1]:
             try:
                 response = requests.get(link["href"], headers=headers)
             except:
+                print(f"PROBLEM GETTING {link}")
                 time.sleep(random.random()*5)
                 continue
 
