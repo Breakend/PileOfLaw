@@ -70,5 +70,11 @@ DOWNLOAD_MAPPING = {
             "train" : "https://drive.google.com/file/d/1ZhsjoMbdV3t2pD_fUGaUjkrdn96ZinHh/view?usp=sharing",
             "validation" : "https://drive.google.com/file/d/1UnI5ewdpx1Tx2i9bduN8T31U2UZ8aYYc/view?usp=sharing"
         }
+    },
+    "us_bills" : {
+        "urls" : {
+            "train" : "https://drive.google.com/file/d/1JMoNnXhPpl3PjId0ekizYwWAufKMNzwf/view?usp=sharing",
+            "validation" : "https://drive.google.com/file/d/1y_xBlyJPuZn3PgoZgjpLAfXfeUGPIRaj/view?usp=sharing"
+        }
     }
 }
