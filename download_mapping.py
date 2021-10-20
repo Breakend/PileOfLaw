@@ -40,12 +40,6 @@ DOWNLOAD_MAPPING = {
             "validation" : "https://drive.google.com/file/d/1KYe21mZ5PINwAwucud6SeXDBxQh-8WA6/view?usp=sharing"
         }
     },
-    "chesney_cybersecurity" : {
-        "urls" : {
-            "train" : "https://drive.google.com/file/d/1ueU6SC51v_d15_tGIKd6kR9OMK8-3B8O/view?usp=sharing",
-            "validation" : ""
-        }
-    },
     "tax_rulings" : {
         "urls" : {
             "train" : "https://drive.google.com/file/d/19sK0JsRgIM2bLPzVZ8aFeTAAb6g9RDfb/view?usp=sharing",
@@ -131,7 +125,7 @@ DOWNLOAD_MAPPING = {
     "cc_textbooks" : {
         "urls" : {
             "train" : "https://drive.google.com/file/d/1Je_gv4arwMGHhRPP_VlBenyLnkjTf8sP/view?usp=sharing"
-            "validation" : ""
+            "validation" : "https://drive.google.com/file/d/1DnfjqqK61jAUVCVv-GStyFMd09Mt1mj2/view?usp=sharing"
         }
     },
    "eurlex" : {
@@ -162,6 +156,24 @@ DOWNLOAD_MAPPING = {
        "urls" : {
            "train" : "https://drive.google.com/file/d/1J7X7QoV-UgybCdDyu0pZjOez3gCBPBpv/view?usp=sharing",
            "validation" :  "https://drive.google.com/file/d/1XRuPugqtQdsfZodbGOdGi2jSagXu2Pbe/view?usp=sharing"
+       }
+   },
+   "ftc_advisory_opinions" : {
+       "urls" : {
+           "train" : "https://drive.google.com/file/d/1KtH1M1q9S3hNfhOVxHJgve1NIbMMaQ38/view?usp=sharing",
+           "validation" : "https://drive.google.com/file/d/1rc_bgPYfnB20r6XT2UQ2lCe0uIVUjqJ4/view?usp=sharing"
+       }
+   },
+   "founding_doc" : {
+       "urls" : {
+           "train" : "https://drive.google.com/file/d/1pMnpUUJIDWzPdF1aEvUa23QTwxVpYi3p/view?usp=sharing",
+           "validation" : "https://drive.google.com/file/d/1ik2XB1pa1twl_i8zhM39N5Ck9oDI2fc0/view?usp=sharing"
+       }
+   },
+   "scotus_briefs" : {
+       "urls" : {
+           "train" : "https://drive.google.com/file/d/1BH_O-GcHeimjmgfGFjfUw1QJLX6_fo81/view?usp=sharing",
+           "validation" : "https://drive.google.com/file/d/19XfXK9Y9WsJRXPpUDx3Kw39Rg9amJVNx/view?usp=sharing"
        }
    }
 }

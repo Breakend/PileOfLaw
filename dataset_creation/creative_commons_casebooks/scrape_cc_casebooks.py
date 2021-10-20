@@ -11,7 +11,7 @@ except ImportError:
 overwrite = True
 open_type = 'w' if overwrite else 'a'
 train_f = xz.open("./cache/train.cc_casebooks.xz", open_type)
-# val_f = xz.open("./cache/validation.cc_casebooks.xz", open_type)
+val_f = xz.open("./cache/validation.cc_casebooks.xz", open_type)
 # ASSUMES THAT YOUVE DOWNLOADED THE TEXTBOOKS INTO THE CACHE AND THAT THEY'RE ALL CC LICENSE
 docs = []
 for path, subdirs, files in os.walk("./cache/"):
@@ -26,7 +26,7 @@ for path, subdirs, files in os.walk("./cache/"):
             "url" : "https://open.umn.edu/opentextbooks/"
         }
 
-        # if random.random() > .75:
-        #     val_f.write((json.dumps(datapoint) + "\n").encode("utf-8"))
-        # else:
-        train_f.write((json.dumps(datapoint) + "\n").encode("utf-8"))
+        if random.random() > .75:
+            val_f.write((json.dumps(datapoint) + "\n").encode("utf-8"))
+        else:
+            train_f.write((json.dumps(datapoint) + "\n").encode("utf-8"))
