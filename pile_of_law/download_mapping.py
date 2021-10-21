@@ -15,7 +15,8 @@ DOWNLOAD_MAPPING = {
         "urls" :{
             "train" : "https://drive.google.com/file/d/1RJXlyBJ9xr2ZtiI510BmiLiBepfBcMPH/view?usp=sharing",
             "validation" : "https://drive.google.com/file/d/1iIrrlDD6i5Ygh3V4BOfknMBn1ApiqeZh/view?usp=sharing"
-        },
+        }
+    },
     "stanford_bar_exam_outlines" : {
         "urls" : {
             "train" : "https://drive.google.com/file/d/1kqKwQxCt45ccbtrBrkI-T3az_Id8cLTr/view?usp=sharing",
@@ -57,6 +58,7 @@ DOWNLOAD_MAPPING = {
             "train" : "https://drive.google.com/file/d/1_4qSNBNbD1s3tuB9XbbPPClXk0y_Rq15/view?usp=sharing",
             "validation" : "https://drive.google.com/file/d/1H4ac_0VjaIcpS6gbwCYovGxanUkUSd7L/view?usp=sharing"
         }
+    },
     "tos" : {
         "urls" :{
             "train" : "https://drive.google.com/file/d/1GlZjyBPHomLOlXdZEeOiJMv8z7VwheWC/view?usp=sharing",
@@ -103,6 +105,7 @@ DOWNLOAD_MAPPING = {
         "urls" :{
             "train": "https://drive.google.com/file/d/11mjde6aWf8TAYftnLoXWb4uMo1c9VO9u/view?usp=sharing",
             "validation": "https://drive.google.com/file/d/1FWosuQzycCVC10_a7VM8o9de_lb2GRN5/view?usp=sharing"   
+        }
     },
     "echr" : {
         "urls" : {
@@ -124,7 +127,7 @@ DOWNLOAD_MAPPING = {
     },
     "cc_textbooks" : {
         "urls" : {
-            "train" : "https://drive.google.com/file/d/1Je_gv4arwMGHhRPP_VlBenyLnkjTf8sP/view?usp=sharing"
+            "train" : "https://drive.google.com/file/d/1Je_gv4arwMGHhRPP_VlBenyLnkjTf8sP/view?usp=sharing",
             "validation" : "https://drive.google.com/file/d/1DnfjqqK61jAUVCVv-GStyFMd09Mt1mj2/view?usp=sharing"
         }
     },
@@ -183,13 +186,13 @@ DOWNLOAD_MAPPING = {
         }
     },
    "r_legaladvice" : {
-       "urls" :{
+       "urls" : {
         "train" : "https://drive.google.com/file/d/1P1hqqD4xTNjT5PVqgaNN-m0Zqw1B_NUc/view?usp=sharing",
         "validation" : "https://drive.google.com/file/d/19eDVWGrjh4ZTMYoLPxMoYWPeFopgXIiG/view?usp=sharing"
        }
    },
    "courtlistener_docket_documents" : {
-       "urls" {
+       "urls" : {
         "train" : "https://drive.google.com/file/d/1_vfQv_AuAGMZ8pgPOIl2OTApj2rgPn13/view?usp=sharing",
         "validation" : "https://drive.google.com/file/d/1alBI-QrSqXa-V7E3a6IPLE1aB-_K5Js3/view?usp=sharing"
        }

@@ -18,8 +18,13 @@
 import os
 import re
 from itertools import chain
-import lzma, json
-from download_mapping import DOWNLOAD_MAPPING
+import json
+try:
+    import lzma as xz
+except ImportError:
+    import pylzma as xz
+
+from .download_mapping import DOWNLOAD_MAPPING
 import datasets
 
 
