@@ -181,5 +181,17 @@ DOWNLOAD_MAPPING = {
             "train" : "https://drive.google.com/file/d/1JMoNnXhPpl3PjId0ekizYwWAufKMNzwf/view?usp=sharing",
             "validation" : "https://drive.google.com/file/d/1y_xBlyJPuZn3PgoZgjpLAfXfeUGPIRaj/view?usp=sharing"
         }
-    }
+    },
+   "r_legaladvice" : {
+       "urls" :{
+        "train" : "https://drive.google.com/file/d/1P1hqqD4xTNjT5PVqgaNN-m0Zqw1B_NUc/view?usp=sharing",
+        "validation" : "https://drive.google.com/file/d/19eDVWGrjh4ZTMYoLPxMoYWPeFopgXIiG/view?usp=sharing"
+       }
+   },
+   "courtlistener_docket_documents" : {
+       "urls" {
+        "train" : "https://drive.google.com/file/d/1_vfQv_AuAGMZ8pgPOIl2OTApj2rgPn13/view?usp=sharing",
+        "validation" : "https://drive.google.com/file/d/1alBI-QrSqXa-V7E3a6IPLE1aB-_K5Js3/view?usp=sharing"
+       }
+   }
 }
