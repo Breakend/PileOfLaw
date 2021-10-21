@@ -27,6 +27,7 @@ except ImportError:
 from .download_mapping import DOWNLOAD_MAPPING
 import datasets
 
+logger = datasets.logging.get_logger(__name__)
 
 _CITATION = """\
 @misc{todo,
@@ -42,6 +43,12 @@ A dataset for pretraining legal models
 """
 
 _URL = "TODO"
+
+def _get_drive_url(url):
+     base_url = 'https://drive.google.com/uc?id='
+     split_url = url.split('/')
+     return base_url + split_url[5]
+    
 
 class PileOfLaw(datasets.GeneratorBasedBuilder):
     """The Open WebText dataset."""
@@ -66,8 +73,8 @@ class PileOfLaw(datasets.GeneratorBasedBuilder):
         val_urls = []
         train_urls = []
         for name, info in DOWNLOAD_MAPPING.items():
-            val_urls.append(info["urls"]["validation"])
-            train_urls.append(info["urls"]["train"])
+            val_urls.append(_get_drive_url(info["urls"]["validation"]))
+            train_urls.append(_get_drive_url(info["urls"]["train"]))
         train_downloaded_files = dl_manager.download(train_urls)
         validation_downloaded_files = dl_manager.download(val_urls)
         return [
@@ -97,7 +104,7 @@ class PileOfLaw(datasets.GeneratorBasedBuilder):
         id_ = 0
         for filepath in filepaths:
             logger.info("generating examples from = %s", filepath)
-            with lzma.open(filepath) as f:
+            with xz.open(filepath) as f:
                 for line in f:
                     if line:
                         example = json.loads(str(line, 'utf-8'))
