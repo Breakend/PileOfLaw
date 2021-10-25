@@ -97,8 +97,8 @@ DOWNLOAD_MAPPING = {
     },
     "state_codes" : {
         "urls" : {
-            "train" : "https://drive.google.com/file/d/1y7UGCGUGHdZ5mFiMqu8yiL1iefs0WeU0/view?usp=sharing",
-            "validation" : "https://drive.google.com/file/d/1uNgd3x9UFPYb3YxXDIMXk_8cQ3Jc4kOl/view?usp=sharing"
+            "train" : "https://drive.google.com/file/d/1cYYcYtMlGQL1S8UBt3b0ca513dRnCu3O/view?usp=sharing",
+            "validation" : "https://drive.google.com/file/d/1FC1pI96ZLSkzcJnVAvtC1ZeDJ8SigpBy/view?usp=sharing"
             }
     },
     "federal_register" : {
