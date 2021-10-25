@@ -45,9 +45,10 @@ A dataset for pretraining legal models
 _URL = "TODO"
 
 def _get_drive_url(url):
-     base_url = 'https://drive.google.com/uc?id='
+     base_url = 'https://drive.google.com/uc?id={_id}&export=download'
      split_url = url.split('/')
-     return base_url + split_url[5]
+     _id = split_url[5]
+     return base_url.format(_id=_id)
     
 
 class PileOfLaw(datasets.GeneratorBasedBuilder):
@@ -57,7 +58,7 @@ class PileOfLaw(datasets.GeneratorBasedBuilder):
         datasets.BuilderConfig(
             name="plain_text",
             description="Plain text",
-            version=datasets.Version("1.0.0"),
+            version=datasets.Version("0.1.0"),
         )
     ]
 
@@ -104,9 +105,12 @@ class PileOfLaw(datasets.GeneratorBasedBuilder):
         id_ = 0
         for filepath in filepaths:
             logger.info("generating examples from = %s", filepath)
-            with xz.open(filepath) as f:
+            with xz.open(filepath, 'rb') as f:
                 for line in f:
-                    if line:
-                        example = json.loads(str(line, 'utf-8'))
+                    if line is not None and line != "":
+                        # I'm not sure why, but some files seem to have some garbage at the beginning
+                        if "\x00" in line: 
+                            line = line.split("\x00\x00\x00")[-1]
+                        example = json.loads(line)
                         yield id_, example
                         id_ += 1
