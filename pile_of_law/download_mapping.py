@@ -61,20 +61,20 @@ DOWNLOAD_MAPPING = {
     },
     "tos" : {
         "urls" :{
-            "train" : "https://drive.google.com/file/d/1GlZjyBPHomLOlXdZEeOiJMv8z7VwheWC/view?usp=sharing",
-            "validation" : "https://drive.google.com/file/d/12wrr5TEv9cUtGgRjb-dlFzX6KCphmnE5/view?usp=sharing"
+            "train" : "https://drive.google.com/file/d/1pP2b-5OPQ1slK_3K9RYl8BDsmRJuCmwG/view?usp=sharing",
+            "validation" : "https://drive.google.com/file/d/1TlvfixPJr04bt3ZXNYZecZ64kV6_ntbG/view?usp=sharing"
         }
     },
     "tos_tagged" : {
         "urls" :{
-            "train" : "https://drive.google.com/file/d/1kVc8UC1qGyjlfzlcGgIGT6J1uFm3yNFd/view?usp=sharing",
-            "validation" : "https://drive.google.com/file/d/1-cXuk1O1I60X6qn1B4CKA_4JqUy1Ha8X/view?usp=sharing"
+            "train" : "https://drive.google.com/file/d/1T95uFt1O6jC30JTxbdafD7JkNl9n8-SE/view?usp=sharing",
+            "validation" : "https://drive.google.com/file/d/1P_brJuw7heqSZaZOd03Du-VgnW__rbmz/view?usp=sharing"
         }
     },
     "bva" : {
         "urls" :{
-            "train": "https://drive.google.com/file/d/14SXhyaojMwXjPlcb1GXpK3E6u-abL0Tz/view?usp=sharing",
-            "validation": "https://drive.google.com/file/d/1admnbREtKOzHVe6o4DyqWiJiqvRzJQ3h/view?usp=sharing"
+            "train": "https://drive.google.com/file/d/1m_DQTSL8qpJooGZzsC1w3ChepsWI1W3l/view?usp=sharing",
+            "validation": "https://drive.google.com/file/d/1B_D85DvePbNNX5ZFvq8ZSRsAFYzT_v1k/view?usp=sharing"
         }
     },
     "courtlistener_opinions" : {
@@ -103,8 +103,8 @@ DOWNLOAD_MAPPING = {
     },
     "federal_register" : {
         "urls" :{
-            "train": "https://drive.google.com/file/d/11mjde6aWf8TAYftnLoXWb4uMo1c9VO9u/view?usp=sharing",
-            "validation": "https://drive.google.com/file/d/1FWosuQzycCVC10_a7VM8o9de_lb2GRN5/view?usp=sharing"   
+            "train": "https://drive.google.com/file/d/1crS1BQlw16VElZ2WDgNGondJwDsWbdg1/view?usp=sharing",
+            "validation": "https://drive.google.com/file/d/19iHwa2sdhsygGS462THT3uxnc9avKWvg/view?usp=sharing"  
         }
     },
     "echr" : {
@@ -181,8 +181,8 @@ DOWNLOAD_MAPPING = {
    },
    "us_bills" : {
         "urls" : {
-            "train" : "https://drive.google.com/file/d/1JMoNnXhPpl3PjId0ekizYwWAufKMNzwf/view?usp=sharing",
-            "validation" : "https://drive.google.com/file/d/1y_xBlyJPuZn3PgoZgjpLAfXfeUGPIRaj/view?usp=sharing"
+            "train" : "https://drive.google.com/file/d/1X__Mg8EFAlrA4i5VR4r2FRILtnkbZ_9d/view?usp=sharing",
+            "validation" : "https://drive.google.com/file/d/1bq82IR9JBng0sCZ9epkTQYZ36v6y_Mt8/view?usp=sharing"
         }
     },
    "r_legaladvice" : {
