@@ -49,8 +49,8 @@ DOWNLOAD_MAPPING = {
     },
     "scotus_oral" : {
         "urls" :{
-            "train" : "https://drive.google.com/file/d/1s59DllnfJxYjz89M1RWKgh7zmMNyMQ5u/",
-            "validation" : "https://drive.google.com/file/d/1azhvkZu8d-kX83XApgbzPnhnStKMkxne"
+            "train" : "https://drive.google.com/file/d/1s59DllnfJxYjz89M1RWKgh7zmMNyMQ5u/view?usp=sharing",
+            "validation" : "https://drive.google.com/file/d/1azhvkZu8d-kX83XApgbzPnhnStKMkxne/view?usp=sharing"
         }
     },
     "atticus_contracts" : {
